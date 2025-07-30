@@ -5,5 +5,18 @@ services:
   buildCommand: pip install -r requirements.txt
   startCommand: uvicorn main:app --host 0.0.0.0 --port 10000
   envVars:
-    ENVIRONMENT: production
-    PORT: '10000'
+  - key: ENVIRONMENT
+    value: production
+  - key: PORT
+    value: '10000'
+  - fromDatabase:
+      name: sunu-hrms-db
+      property: connectionString
+    key: DATABASE_URL
+- type: postgres
+  name: sunu-hrms-db
+  plan: starter
+  properties:
+    databaseName: sunu_hrms_db
+    user: sunu_hrms_user
+    password: sunu_hrms_pass
