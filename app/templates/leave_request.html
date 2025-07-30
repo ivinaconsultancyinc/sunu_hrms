@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Leave Request - SUNU HRMS</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        form { max-width: 400px; }
+        input, textarea { width: 100%; margin-bottom: 10px; padding: 8px; }
+        button { padding: 10px 15px; background-color: #007BFF; color: white; border: none; }
+    </style>
+</head>
+<body>
+    <h1>Leave Request - SUNU HRMS</h1>
+    <h3>Leave Request Form</h3>
+    <form method="post" action="/leave-request">
+        Start Date: <input type="date" name="start_date" required><br>
+        End Date: <input type="date" name="end_date" required><br>
+        Reason:<br><textarea name="reason" required></textarea><br>
+        <button type="submit">Submit Request</button>
+    </form>
+</body>
+</html>

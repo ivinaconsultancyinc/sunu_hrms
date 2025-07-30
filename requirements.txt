@@ -1,0 +1,15 @@
+aiofiles
+email-validator
+fastapi
+httpx
+itsdangerous
+jinja2
+passlib[bcrypt]
+pydantic
+pytest
+python-jose
+python-multipart
+sqlalchemy
+uvicorn
+websockets
+

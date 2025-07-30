@@ -1,0 +1,53 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>WebSocket Client with JWT</title>
+</head>
+<body>
+    <h2>WebSocket Client with JWT Authentication</h2>
+    <label for="tokenInput">JWT Token:</label>
+    <input type="text" id="tokenInput" placeholder="Paste your JWT token here" size="80" />
+    <br><br>
+    <input type="text" id="messageInput" placeholder="Type a message..." />
+    <button onclick="sendMessage()">Send</button>
+    <ul id="messages"></ul>
+
+    <script>
+        let socket;
+
+        function connectWebSocket() {
+            const token = document.getElementById("tokenInput").value;
+            socket = new WebSocket("ws://localhost:8000/ws/updates?token=" + encodeURIComponent(token));
+
+            socket.onopen = () => {
+                console.log("Connected to WebSocket server.");
+            };
+
+            socket.onmessage = (event) => {
+                const messages = document.getElementById("messages");
+                const li = document.createElement("li");
+                li.textContent = event.data;
+                messages.appendChild(li);
+            };
+
+            socket.onclose = () => {
+                console.log("Disconnected from WebSocket server.");
+            };
+        }
+
+        function sendMessage() {
+            const input = document.getElementById("messageInput");
+            if (socket && socket.readyState === WebSocket.OPEN) {
+                socket.send(input.value);
+                input.value = "";
+            } else {
+                alert("WebSocket is not connected.");
+            }
+        }
+
+        // Automatically connect when the page loads
+        window.onload = connectWebSocket;
+    </script>
+</body>
+</html>

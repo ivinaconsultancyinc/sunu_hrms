@@ -1,0 +1,37 @@
+
+
+
+Run this command to install the required package:
+pip install pydantic-settings
+pip install pydantic[email]
+
+Project Structure: sunu_hrms/
+
+sunu_hrms/
+│
+├── app/
+│   ├── main.py              # ✅ FastAPI entry point with JWT & routers
+│   ├── config.py            # Environment variables and settings
+│   ├── database.py          # SQLAlchemy engine and session setup
+│   ├── models/              # ORM models (e.g., User, Employee, Salary)
+│   ├── schemas/             # Pydantic models for request/response validation
+│   ├── crud/                # DB operations (create, read, update, delete)
+│   ├── api/                 # API routers
+│   │   ├── auth.py
+│   │   ├── admin.py
+│   │   ├── hr.py
+│   │   ├── finance.py
+│   │   ├── audit.py
+│   │   ├── notifications.py
+│   │   ├── analytics.py
+│   │   ├── mobile_api.py
+│   │   └── user.py
+│   ├── services/            # Business logic (e.g., email, payroll, analytics)
+│   ├── templates/           # HTML templates (e.g., login.html, dashboard.html)
+│   ├── static/              # CSS, JS, images
+│   ├── websockets/          # Real-time updates (e.g., attendance, alerts)
+│   ├── utils/               # Helper functions (e.g., token handling, validators)
+│   └── auth_utils.py        # ✅ JWT authentication module
+│
+├── tests/                   # Unit and integration tests
+├── requirements.txt         # 

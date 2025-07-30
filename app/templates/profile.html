@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Profile - SUNU HRMS</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; }
+        .profile-container { max-width: 500px; margin: auto; padding: 20px; border: 1px solid #ccc; border-radius: 8px; }
+        h1 { text-align: center; }
+        .info { margin: 10px 0; font-size: 18px; }
+    </style>
+</head>
+<body>
+    <div class="profile-container">
+        <h1>User Profile</h1>
+        <div class="info"><strong>Username:</strong> {{ user.username }}</div>
+        <div class="info"><strong>Role:</strong> {{ user.role }}</div>
+    </div>
+</body>
+</html>

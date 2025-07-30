@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dashboard - SUNU HRMS</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        nav { margin-bottom: 20px; }
+        nav a { margin-right: 15px; text-decoration: none; color: #007BFF; }
+    </style>
+</head>
+<body>
+    <h1>Dashboard - SUNU HRMS</h1>
+    <nav>
+        <a href="/leave-request">Leave Request</a>
+        <a href="/attendance">Attendance</a>
+        <a href="/payroll">Payroll</a>
+    </nav>
+    <h3>Welcome to the Dashboard</h3>
+    <p>This is the dashboard for {{ user.role }}: {{ user.username }}</p>
+</body>
+</html>
