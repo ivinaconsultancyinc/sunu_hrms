@@ -3,6 +3,7 @@ from fastapi.responses import RedirectResponse, HTMLResponse
 from fastapi.templating import Jinja2Templates
 from jose import jwt
 from datetime import datetime, timedelta
+from app.websockets import updates
 
 # Initialize FastAPI app and templates
 app = FastAPI()
@@ -136,3 +137,7 @@ def get_db():
         yield db
     finally:
         db.close()
+
+
+
+
