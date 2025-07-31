@@ -1,9 +1,6 @@
 services:
-- type: web
-  name: sunu-hrms
+- buildCommand: pip install -r requirements.txt
   env: python
-  buildCommand: pip install -r requirements.txt
-  startCommand: uvicorn main:app --host 0.0.0.0 --port 10000
   envVars:
   - key: ENVIRONMENT
     value: production
@@ -13,10 +10,13 @@ services:
       name: sunu-hrms-db
       property: connectionString
     key: DATABASE_URL
-- type: postgres
-  name: sunu-hrms-db
+  name: sunu-hrms
+  startCommand: uvicorn main:app --host 0.0.0.0 --port 10000
+  type: web
+- name: sunu-hrms-db
   plan: starter
   properties:
     databaseName: sunu_hrms_db
-    user: sunu_hrms_user
     password: sunu_hrms_pass
+    user: sunu_hrms_user
+  type: postgres
