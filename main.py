@@ -116,13 +116,6 @@ def logout():
     return response
 
             "request": request,
-            "error": "Invalid credentials"
-        })
-    token = create_access_token({"sub": user["username"], "role": user["role"]})
-    response = RedirectResponse(url="/dashboard", status_code=status.HTTP_302_FOUND)
-    response.set_cookie(key="access_token", value=token, httponly=True)
-    return response
-
 # Save the updated file
 with open("main_updated.py", "w") as f:
 
