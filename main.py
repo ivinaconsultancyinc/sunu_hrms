@@ -104,20 +104,13 @@ def login(request: Request, username: str = Form(...), password: str = Form(...)
     })
 
 @app.get("/logout")
-    token = create_access_token({"sub": user["username"], "role": user["role"]})
-    response = RedirectResponse(url="/dashboard", status_code=status.HTTP_302_FOUND)
-    response.set_cookie(key="access_token", value=token, httponly=True)
-    return response
 
 @app.get("/logout")
 def logout():
-    response = RedirectResponse(url="/login", status_code=status.HTTP_302_FOUND)
     response.delete_cookie("access_token")
-    return response
 
-            "request": request,
+
 # Save the updated file
-with open("main_updated.py", "w") as f:
 
 
 # Create database tables
@@ -130,7 +123,6 @@ def get_db():
         yield db
     finally:
         db.close()
-
 
 
 
