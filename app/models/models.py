@@ -1,12 +1,21 @@
-# Auto-generated models.py file
-# Imports all model classes from individual model files
-
-from app.models.analytics import *
-from app.models.attendance import *
-from app.models.user import *
-from app.models.audit import *
-from app.models.employee import *
-from app.models.notification import *
-from app.models.payroll import *
-from app.models.performance import *
-from app.models.recruitment import *
+# app/models/models.py
+from app.models.notification import Notification
+from app.models.user import User
+from app.models.employee import Employee
+from app.models.attendance import Attendance
+from app.models.analytics import Analytics
+from app.models.audit import Audit
+from app.models.payroll import Payroll
+from app.models.performance import Performance
+from app.models.recruitment import Recruitment
+__all__ = [
+    "Notification",
+    "User",
+    "Employee",
+    "Attendance",
+    "Analytics",
+    "Audit",
+    "Payroll",
+    "Performance",
+    "Recruitment"
+]
