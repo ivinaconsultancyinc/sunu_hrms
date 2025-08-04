@@ -3,7 +3,7 @@ from app.models.notification import Notification
 from app.models.user import User
 from app.models.employee import Employee
 from app.models.attendance import Attendance
-from app.models.analytics import Analytics
+from app.models.analytics import Report, Metric
 from app.models.audit import Audit
 from app.models.payroll import Payroll
 from app.models.performance import Performance
