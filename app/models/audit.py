@@ -1,6 +1,6 @@
 from sqlalchemy import Column, Integer, String, DateTime
 from datetime import datetime
-from app.database_schemas import Base
+from app.database import Base
 
 class AuditLog(Base):
     __tablename__ = "audit_logs"
@@ -9,4 +9,5 @@ class AuditLog(Base):
     action = Column(String, nullable=False)
     performed_by = Column(String)
     timestamp = Column(DateTime, default=datetime.utcnow)
+
 
