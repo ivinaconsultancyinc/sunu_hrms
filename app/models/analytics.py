@@ -1,5 +1,5 @@
 from sqlalchemy import Column, Integer, String, Float, Date
-from app.database_schemas import Base
+from app.database import Base
 
 class Report(Base):
     __tablename__ = "reports"
@@ -15,4 +15,5 @@ class Metric(Base):
     name = Column(String, nullable=False)
     value = Column(Float)
     recorded_on = Column(Date)
+
 
