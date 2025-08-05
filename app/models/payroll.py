@@ -1,6 +1,6 @@
 from sqlalchemy import Column, Integer, Float, String, ForeignKey, Date
 from sqlalchemy.orm import relationship
-from app.database_schemas import Base
+from app.database import Base
 
 class Salary(Base):
     __tablename__ = "salaries"
@@ -20,4 +20,5 @@ class Payslip(Base):
     year = Column(Integer, nullable=False)
     total_salary = Column(Float, nullable=False)
     generated_on = Column(Date)
+
 
