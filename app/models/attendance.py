@@ -1,6 +1,6 @@
 from sqlalchemy import Column, Integer, Date, Time, ForeignKey
 from sqlalchemy.orm import relationship
-from app.database_schemas import Base
+from app.database import Base
 
 class Attendance(Base):
     __tablename__ = "attendance"
@@ -11,3 +11,4 @@ class Attendance(Base):
     check_in = Column(Time)
 
     check_out = Column(Time)
+
