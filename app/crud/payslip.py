@@ -1,6 +1,6 @@
 from sqlalchemy.orm import Session
 from sqlalchemy.exc import NoResultFound
-from app.models.payslip import Payslip
+from app.models.payroll import Payslip
 
 # Create a new payslip record
 def create_payslip(db: Session, payslip_data: dict) -> Payslip:
@@ -36,4 +36,5 @@ def delete_payslip(db: Session, payslip_id: int) -> bool:
         return False
     db.delete(payslip)
     db.commit()
+
     return True
