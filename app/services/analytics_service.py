@@ -14,7 +14,7 @@ Author: SUNU HRMS Team
 from sqlalchemy.orm import Session
 from sqlalchemy import func
 from app.models.employee import Employee
-from app.models.payslip import Payslip
+from app.models.payroll import Payslip
 
 def get_employee_count(db: Session) -> int:
     """Returns the total number of employees."""
@@ -35,4 +35,5 @@ def generate_summary_report(db: Session) -> dict:
         "average_salary": get_average_salary(db),
         "total_payroll": get_total_payroll(db)
     }
+
 
