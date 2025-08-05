@@ -1,6 +1,6 @@
 from sqlalchemy import Column, Integer, String, ForeignKey, Date
 from sqlalchemy.orm import relationship
-from app.database_schemas import Base
+from app.database import Base
 
 class JobPost(Base):
     __tablename__ = "job_posts"
@@ -26,3 +26,4 @@ class Interview(Base):
     scheduled_on = Column(Date)
 
     result = Column(String)
+
