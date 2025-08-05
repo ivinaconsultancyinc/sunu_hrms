@@ -1,34 +1,34 @@
- # app/models/__init__.py
-from app.models.notification import notifications
-from app.models.user import users
-from app.models.employee import departments, job_titles, employees
+# app/models/__init__.py
+from app.models.notification import Notification
+from app.models.user import User
+from app.models.employee import Department, JobTitle, Employee
 from app.models.attendance import Attendance
 from app.models.analytics import Report, Metric
-from app.models.audit import audit_logs
-from app.models.payroll import salaries, payslips
-from app.models.performance import performance_reviews, goals, kpis
-from app.models.recruitment import job_posts, applications, interviews
+from app.models.audit import Auditlog
+from app.models.payroll import Salary, Payslip
+from app.models.performance import PerformanceReview, Goal, KPI
+from app.models.recruitment import Jobpost, Application, Interview
 __all__ = [
-    "notifications",
-    "users",
-    "Employees",
+    "Notification",
+    "User",
+    "Employee",
     "Attendance",
     "Report",
     "Metric",
-    "audit_logs",
+    "Auditlog",
     "Payroll",
     "Performance",
     "Recruitment",
-    "departments",
-    "job_titles",
-    "payslips",
-    "salaries",
-    "performance_reviews",
-    "goals",
-    "kpis",
-    "job_posts",
-    "applications",
-    "interviews"  
+    "department",
+    "Jobtitle",
+    "Payslip",
+    "Salary",
+    "PerformanceReview",
+    "Goal",
+    "KPI",
+    "JobPost",
+    "Application",
+    "Interview"  
 
 ]
 
