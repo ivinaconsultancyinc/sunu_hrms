@@ -1,12 +1,13 @@
- """
-Analytics Service Module for SUNU HRMS
 
+# app/services/analytics_service.py
+
+"""
+Analytics Service Module for SUNU HRMS
 This module provides functions to compute key HR metrics such as:
 - Total employee count
 - Average salary
 - Total payroll cost
 - Summary report generation
-
 Author: SUNU HRMS Team
 """
 
@@ -34,3 +35,4 @@ def generate_summary_report(db: Session) -> dict:
         "average_salary": get_average_salary(db),
         "total_payroll": get_total_payroll(db)
     }
+
