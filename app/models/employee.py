@@ -1,6 +1,6 @@
 from sqlalchemy import Column, Integer, String, ForeignKey
 from sqlalchemy.orm import relationship
-from app.database_schemas import Base
+from app.database import Base
 
 class Department(Base):
     __tablename__ = "departments"
@@ -28,5 +28,6 @@ class Employee(Base):
 
     department = relationship("Department", back_populates="employees")
     job_title = relationship("JobTitle", back_populates="employees")
+
 
 
