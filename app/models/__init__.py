@@ -5,7 +5,7 @@ from app.models.employee import Department, JobTitle, Employee
 from app.models.attendance import Attendance
 from app.models.analytics import Report, Metric
 from app.models.audit import AuditLog
-from app.models.payroll import Salary, PaySlip
+from app.models.payroll import Salary, Payslip
 from app.models.performance import PerformanceReview, Goal, KPI
 from app.models.recruitment import Jobpost, Application, Interview
 __all__ = [
@@ -21,7 +21,7 @@ __all__ = [
     "Recruitment",
     "department",
     "Jobtitle",
-    "PaySlip",
+    "Payslip",
     "Salary",
     "PerformanceReview",
     "Goal",
