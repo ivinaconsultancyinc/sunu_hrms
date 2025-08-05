@@ -16,7 +16,6 @@ __all__ = [
     "Metric",
     "AuditLog",
     "Payroll",
-    "Performance",
     "Recruitment",
     "department",
     "Jobtitle",
