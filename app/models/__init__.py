@@ -6,7 +6,7 @@ from app.models.attendance import Attendance
 from app.models.analytics import Report, Metric
 from app.models.audit import AuditLog
 from app.models.payroll import Salary, Payslip
-from app.models.recruitment import Jobpost, Application, Interview
+from app.models.recruitment import JobPost, Application, Interview
 __all__ = [
     "Notification",
     "User",
