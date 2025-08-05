@@ -6,10 +6,6 @@ from app.models.attendance import Attendance
 from app.models.analytics import Report, Metric
 from app.models.audit import AuditLog
 from app.models.payroll import Salary, Payslip
-from app.models import Performance 
-PerformanceReview = Performance.PerformanceReview
-Goal = Performance.Goal
-KPI = Performance.KPI
 from app.models.recruitment import Jobpost, Application, Interview
 __all__ = [
     "Notification",
@@ -26,9 +22,6 @@ __all__ = [
     "Jobtitle",
     "Payslip",
     "Salary",
-    "PerformanceReview",
-    "Goal",
-    "KPI",
     "JobPost",
     "Application",
     "Interview"  
