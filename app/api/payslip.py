@@ -1,6 +1,6 @@
 from fastapi import APIRouter, Depends, HTTPException
 from sqlalchemy.orm import Session
-from app.database import get_db
+from app.dependencies import get_db
 from app.crud import payslip as payslip_crud
 from app.models.payslip import Payslip
 
@@ -33,4 +33,5 @@ def delete_payslip(payslip_id: int, db: Session = Depends(get_db)):
     success = payslip_crud.delete_payslip(db, payslip_id)
     if not success:
         raise HTTPException(status_code=404, detail="Payslip not found")
+
     return {"detail": "Payslip deleted successfully"}
