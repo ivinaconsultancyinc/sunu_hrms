@@ -4,8 +4,8 @@ from app.models.user import User
 from app.models.employee import Department, JobTitle, Employee
 from app.models.attendance import Attendance
 from app.models.analytics import Report, Metric
-from app.models.audit import Auditlog
-from app.models.payroll import Salary, Payslip
+from app.models.audit import AuditLog
+from app.models.payroll import Salary, PaySlip
 from app.models.performance import PerformanceReview, Goal, KPI
 from app.models.recruitment import Jobpost, Application, Interview
 __all__ = [
@@ -15,13 +15,13 @@ __all__ = [
     "Attendance",
     "Report",
     "Metric",
-    "Auditlog",
+    "AuditLog",
     "Payroll",
     "Performance",
     "Recruitment",
     "department",
     "Jobtitle",
-    "Payslip",
+    "PaySlip",
     "Salary",
     "PerformanceReview",
     "Goal",
