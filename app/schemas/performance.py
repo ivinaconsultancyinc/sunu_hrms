@@ -1,41 +1,14 @@
 from pydantic import BaseModel
 from typing import Optional
 
-class PerformanceReviewBase(BaseModel):
+# Schema for incoming performance data
+class PerformanceCreate(BaseModel):
     employee_id: int
+    review_period: str
     score: float
-    comments: Optional[str]
+    comments: Optional[str] = None
 
-class PerformanceReviewCreate(PerformanceReviewBase):
-    pass
-
-class PerformanceReviewResponse(PerformanceReviewBase):
+# Schema for outgoing performance data with ID
+class PerformanceResponse(PerformanceCreate):
     id: int
-    class Config:
-        orm_mode = True
 
-class GoalBase(BaseModel):
-    employee_id: int
-    description: str
-    achieved: bool
-
-class GoalCreate(GoalBase):
-    pass
-
-class GoalResponse(GoalBase):
-    id: int
-    class Config:
-        orm_mode = True
-
-class KPIBase(BaseModel):
-    employee_id: int
-    metric: str
-    value: float
-
-class KPICreate(KPIBase):
-    pass
-
-class KPIResponse(KPIBase):
-    id: int
-    class Config:
-        orm_mode = True
