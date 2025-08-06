@@ -8,7 +8,7 @@ from app.crud import user as crud_user
 
 router = APIRouter()
 
-@router.post("/users/", response_model=userResponse)
+@router.post("/users/", response_model=UserResponse)
 def create_user(user: UserCreate, db: Session = Depends(get_db)):
     db_user = crud_user.get_user_by_email(db, email=user.email)
     if db_user:
@@ -33,6 +33,7 @@ def delete_user(user_id: int, db: Session = Depends(get_db)):
     if not success:
         raise HTTPException(status_code=404, detail="User not found")
     return {"message": "User deleted successfully"}
+
 
 
 
