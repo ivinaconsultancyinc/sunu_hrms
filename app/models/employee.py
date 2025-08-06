@@ -28,6 +28,6 @@ class Employee(Base):
 
     department = relationship("Department", back_populates="employees")
     job_title = relationship("JobTitle", back_populates="employees")
-
+    performance_reviews = relationship("PerformanceReview", back_populates="employee")
 
 
