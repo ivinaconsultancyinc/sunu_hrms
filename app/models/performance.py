@@ -1,29 +1,23 @@
-from sqlalchemy import Column, Integer, String, ForeignKey, Date
+from sqlalchemy import Column, Integer, Float, Text, ForeignKey, Date, String
 from sqlalchemy.orm import relationship
 from app.database import Base
-
-class JobPost(Base):
-    __tablename__ = "job_posts"
-
+class PerformanceReview(Base):
+    __tablename__ = "performance_reviews"
     id = Column(Integer, primary_key=True, index=True)
-    title = Column(String, nullable=False)
-    description = Column(String)
-    posted_on = Column(Date)
-
-class Application(Base):
-    __tablename__ = "applications"
-
+    employee_id = Column(Integer, ForeignKey("employees.id"), index=True)
+    review_date = Column(Date, index=True)
+    score = Column(Float)
+    comments = Column(Text)
+    employee = relationship("Employee", back_populates="performance_reviews")
+class Goal(Base):
+    __tablename__ = "goals"
     id = Column(Integer, primary_key=True, index=True)
-    job_post_id = Column(Integer, ForeignKey("job_posts.id"))
-    applicant_name = Column(String)
-    status = Column(String, default="pending")
-
-class Interview(Base):
-    __tablename__ = "interviews"
-
+    employee_id = Column(Integer, ForeignKey("employees.id"))
+    description = Column(Text)
+    status = Column(String)
+class KPI(Base):
+    __tablename__ = "kpis"
     id = Column(Integer, primary_key=True, index=True)
-    application_id = Column(Integer, ForeignKey("applications.id"))
-    scheduled_on = Column(Date)
-
-    result = Column(String)
-
+    employee_id = Column(Integer, ForeignKey("employees.id"))
+    metric = Column(String)
+    value = Column(Float)
