@@ -13,6 +13,7 @@ from app.api import (
 from app.config import settings
 from app.database import SessionLocal, engine, Base
 from app.websockets import updates
+from app.api import recruitment
 # Initialize FastAPI app and templates
 app = FastAPI()
 templates = Jinja2Templates(directory="templates")
@@ -33,6 +34,7 @@ app.include_router(payroll.router, prefix="/payroll", tags=["Payroll"])
 app.include_router(attendance.router, prefix="/attendance", tags=["Attendance"])
 app.include_router(employee.router, prefix="/employees", tags=["Employees"])
 app.include_router(user.router, prefix="/users", tags=["Users"])
+app.include_router(recruitment.router)
 # JWT settings
 SECRET_KEY = settings.secret_key
 ALGORITHM = settings.jwt_algorithm
