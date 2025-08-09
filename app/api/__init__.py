@@ -6,7 +6,7 @@ from .audit  import *
 from .auth import *
 from .finance import *
 from .hr import *
-from .mobile  import *
+from .mobile_api  import *
 from .notifications  import *
 from .payroll import *
 from .payslip import *
