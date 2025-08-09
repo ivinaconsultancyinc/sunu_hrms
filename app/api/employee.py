@@ -3,7 +3,7 @@ from sqlalchemy.orm import Session
 from typing import List
 from app.dependencies import get_db
 from app.schemas.employee import EmployeeCreate, EmployeeResponse
-from app.crud import employee as crud_employee
+from app.crud import employee_crud as crud_employee
 router = APIRouter()
 @router.post("/employees/", response_model=EmployeeResponse)
 def create_employee(employee: EmployeeCreate, db: Session = Depends(get_db)):
