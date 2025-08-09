@@ -1,4 +1,4 @@
- from .employee import *
+from .employee import *
 from .admin import *
 from .aanalytics import *
 from .attendance  import *
