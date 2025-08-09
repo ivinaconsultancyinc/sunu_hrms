@@ -15,6 +15,7 @@ from app.database import SessionLocal, engine, Base
 from app.websockets import updates
 from app.api import recruitment
 from app.api import attendance
+from app.api import employee_router
 # Initialize FastAPI app and templates
 app = FastAPI()
 templates = Jinja2Templates(directory="templates")
@@ -33,7 +34,7 @@ app.include_router(performance.router, prefix="/performance", tags=["Performance
 app.include_router(recruitment.router, prefix="/recruitment", tags=["Recruitment"])
 app.include_router(payroll.router, prefix="/payroll", tags=["Payroll"])
 app.include_router(attendance.router, prefix="/attendance", tags=["Attendance"])
-app.include_router(employee.router, prefix="/employees", tags=["Employees"])
+app.include_router(employee_router, prefix="/employees", tags=["Employees"])
 app.include_router(user.router, prefix="/users", tags=["Users"])
 app.include_router(recruitment.router)
 # JWT settings
@@ -88,7 +89,7 @@ def create_access_token(data: dict, expires_delta: timedelta = timedelta(minutes
 def login_form(request: Request):
     return templates.TemplateResponse("login.html", {"request": request, "error": None})
 # Login form submission (POST)
-@app.post("/login", response_class=HTMLResponse)
+@app.post [app.post]("/login", response_class=HTMLResponse)
 def login(request: Request, username: str = Form(...), password: str = Form(...)):
     user = authenticate_user(username, password)
     if not user:
@@ -102,5 +103,6 @@ def logout():
     response = RedirectResponse(url="/login")
     response.delete_cookie("access_token")
     return response
+
 
 
