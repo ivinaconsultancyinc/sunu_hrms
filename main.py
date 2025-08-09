@@ -14,6 +14,7 @@ from app.config import settings
 from app.database import SessionLocal, engine, Base
 from app.websockets import updates
 from app.api import recruitment
+from app.api import attendance
 # Initialize FastAPI app and templates
 app = FastAPI()
 templates = Jinja2Templates(directory="templates")
