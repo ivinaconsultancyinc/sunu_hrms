@@ -1,6 +1,6 @@
 from .employee import *
 from .admin import *
-from .aanalytics import *
+from .analytics import *
 from .attendance  import *
 from .audit  import *
 from .auth import *
