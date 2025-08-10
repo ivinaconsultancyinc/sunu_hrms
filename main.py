@@ -89,7 +89,7 @@ def create_access_token(data: dict, expires_delta: timedelta = timedelta(minutes
 def login_form(request: Request):
     return templates.TemplateResponse("login.html", {"request": request, "error": None})
 # Login form submission (POST)
-@app.post [app.post]("/login", response_class=HTMLResponse)
+@app.post("/login", response_class=HTMLResponse)
 def login(request: Request, username: str = Form(...), password: str = Form(...)):
     user = authenticate_user(username, password)
     if not user:
@@ -103,6 +103,4 @@ def logout():
     response = RedirectResponse(url="/login")
     response.delete_cookie("access_token")
     return response
-
-
 
